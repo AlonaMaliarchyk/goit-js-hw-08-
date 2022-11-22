@@ -13,8 +13,9 @@ function onTimeUpdate(e) {
     }
     
 }
-player.setCurrentTime(localStorage.getItem('videoCurrentTime'));
-
+if (localStorage.getItem('videoCurrentTime') !== null) {
+    player.setCurrentTime(localStorage.getItem('videoCurrentTime'));
+};
     // player.getVideoTitle().then(function(title) {
     //     console.log('title:', title);
     // });
