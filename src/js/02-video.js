@@ -5,8 +5,13 @@ const iframe = document.querySelector('iframe');
 const player = new Player(iframe);
 
    player.on('timeupdate', throttle(onTimeUpdate, 1000));
-function onTimeUpdate (e) {
-    localStorage.setItem('videoCurrentTime', e.seconds);
+function onTimeUpdate(e) {
+    if (localStorage === "") {
+        return;
+    } else {
+     localStorage.setItem('videoCurrentTime', e.seconds);   
+    }
+    
 }
 player.setCurrentTime(localStorage.getItem('videoCurrentTime'));
 
