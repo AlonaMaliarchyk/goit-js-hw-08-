@@ -38,14 +38,18 @@ function onTextareaInput(event) {
 
 // Отриуємо значення з зберігання якщо там щось було.Обновляємо дом
 
-// function populeitTextare() {
-//     const removeMessage = localStorage.getItem(STORAGE_KEY);
-//     console.log(removeMessage);
-//     const data = JSON.parse(removeMessage);
-//     if (data.email) {
-//         refs.email.value = data.email
-//     }; if (data.message) {
-//         refs.textarea.value = data.message;
-//     }
-    
-// };
+function populeitTextare() {
+    //витягаємо зі сховища данні
+    const removeMessage = localStorage.getItem(STORAGE_KEY);
+    console.log(removeMessage);
+   //виводимо данні з локал стореджа,якщо вони там є
+    if (removeMessage) {
+        const data = JSON.parse(removeMessage);
+    if (data.email) {
+        refs.email.value = data.email
+    }; if (data.message) {
+        refs.textarea.value = data.message;
+    }
+    };
+};
+populeitTextare();
